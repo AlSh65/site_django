@@ -1,0 +1,45 @@
+<section>
+    <div class="container">
+        <h1 class="text-3">ПАКЕТЫ УСЛУГ</h1>
+        <div class="row justify-content-center">
+            {% for car in card %}
+            <div class="card product_card" >
+
+                <div class="card-body">
+
+                    <h5 class="card-title">BRONZE</h5>
+                    <p class="card-text">{{ car.description }}</p>
+                    <h3>{{ car.value }} руб.</h3>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h1 class="text-3">Цены на услуги</h1>
+        <table class="table table_one">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Услуга</th>
+                <th scope="col">Старая цена</th>
+                <th scope="col">Новая цена</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for t in table %}
+            <tr>
+                <td>{{ t.title }}</td>
+                <td>
+                    <del>{{ t.old_price }}</del>
+                </td>
+                <td>{{ t.new_price }}</td>
+            {% endfor %}
+            </tr>
+
+        </table>
+    </div>
+</section>
